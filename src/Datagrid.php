@@ -10,7 +10,7 @@ class Datagrid {
     private $oSorter;
 
     // Constructor
-    public function __construct(array $aOptionsSorter, array $aOptionsPaginator)
+    public function __construct(array $aOptionsSorter = [], array $aOptionsPaginator = [])
     {
         $this->oSorter = new Sorter($aOptionsSorter);
         $this->oPaginator = new Paginator($aOptionsPaginator);
@@ -21,6 +21,7 @@ class Datagrid {
     {
         $this->oSorter->parseRequest($oRequest);
         $this->oPaginator->parseRequest($oRequest);
+        return $this;
     }
 
     public function getPaginator()

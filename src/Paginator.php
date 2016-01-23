@@ -12,7 +12,7 @@ class Paginator {
     private $iPerPage;
 
     // Constructor
-    public function __construct(array $aOptions)
+    public function __construct(array $aOptions = [])
     {
         $this->iDefaultPerPage = isset($aOptions['default_per_page']) ? $aOptions['default_per_page'] : 20;
         $this->iMaxPerPage = isset($aOptions['max_per_page']) ? $aOptions['max_per_page'] : 300;
