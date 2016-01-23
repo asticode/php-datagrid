@@ -41,12 +41,16 @@ class Sorter {
     public function getQueryString($sBeforeQueryString = '', $sAfterQueryString = '')
     {
         // Initialize
-        $aStrings = [$sBeforeQueryString];
-        $aStrings += $this->aCriteriaQueryStrings;
-        $aStrings = array_merge($aStrings, $sAfterQueryString);
+        $aStrings = $this->aCriteriaQueryStrings;
+        if ($sBeforeQueryString !== '') {
+            array_unshift($aStrings, $sBeforeQueryString);
+        }
+        if ($sAfterQueryString !== '') {
+            array_push($aStrings, $sAfterQueryString);
+        }
 
         // Return
-        return 'ORDER BY ' . implode(',', $aStrings);
+        return count($aStrings) > 0 ? 'ORDER BY ' . implode(',', $aStrings) : '';
     }
 
 }
