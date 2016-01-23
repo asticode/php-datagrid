@@ -1,0 +1,39 @@
+{
+  "name": "asticode/php-datagrid",
+  "type": "library",
+  "description": "Datagrid to handle sorting and pagination in APIs",
+  "keywords": [
+    "php",
+    "datagrid",
+    "api",
+    "sort",
+    "pagination"
+  ],
+  "homepage": "https://github.com/asticode/php-datagrid",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Quentin RENARD",
+      "email": "contact@asticode.com",
+      "homepage": "http://asticode.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Asticode\\Datagrid\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": [
+      "php vendor/bin/phpunit"
+    ],
+    "phpunit": "php vendor/bin/phpunit"
+  }
+}
