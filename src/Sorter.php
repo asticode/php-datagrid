@@ -14,6 +14,9 @@ class Sorter {
     public function __construct(array $aOptions)
     {
         $this->aAllowedLabels = isset($aOptions['allowed_labels']) ? $aOptions['allowed_labels'] : [];
+        foreach ($this->aAllowedLabels as $sLabel => $sValue) {
+            $this->aAllowedLabels['-' . $sLabel] = $sValue;
+        }
         $this->aCriterias = [];
         $this->aCriteriaQueryStrings = [];
     }
