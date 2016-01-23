@@ -11,9 +11,9 @@ class Sorter {
     private $aCriteriaQueryStrings;
 
     // Constructor
-    public function __construct(array $aAllowedLabels)
+    public function __construct(array $aOptions)
     {
-        $this->aAllowedLabels = $aAllowedLabels;
+        $this->aAllowedLabels = isset($aOptions['allowed_labels']) ? $aOptions['allowed_labels'] : [];
         $this->aCriterias = [];
         $this->aCriteriaQueryStrings = [];
     }

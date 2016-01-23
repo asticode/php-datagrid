@@ -10,9 +10,9 @@ class Datagrid {
     private $oSorter;
 
     // Constructor
-    public function __construct(array $aSorterAllowedLabels)
+    public function __construct(array $aConfigSorter)
     {
-        $this->oSorter = new Sorter($aSorterAllowedLabels);
+        $this->oSorter = new Sorter($aConfigSorter);
     }
 
     // Methods
