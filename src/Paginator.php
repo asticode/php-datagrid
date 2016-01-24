@@ -21,6 +21,16 @@ class Paginator {
     }
 
     // Methods
+    public function getPage()
+    {
+        return $this->iPage;
+    }
+
+    public function getPerPage()
+    {
+        return $this->iPerPage;
+    }
+
     public function parseRequest(ServerRequestInterface $oRequest)
     {
         // Parse page
