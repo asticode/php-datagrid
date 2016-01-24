@@ -54,12 +54,12 @@ class Paginator {
         }
     }
 
-    public function getQueryString()
+    public function getQueryString($iAdditionalResult = 0)
     {
         return sprintf(
             'LIMIT %s,%s',
             ($this->iPage - 1) * $this->iPerPage,
-            $this->iPerPage
+            $this->iPerPage + $iAdditionalResult
         );
     }
 
