@@ -45,7 +45,7 @@ class Paginator {
 
         // Parse per page
         if (array_key_exists('per_page', $oRequest->getQueryParams())) {
-            $this->iPerPage = min(intval($oRequest->getQueryParams()['per_page']), $this->iDefaultPerPage);
+            $this->iPerPage = min(intval($oRequest->getQueryParams()['per_page']), $this->iMaxPerPage);
             if ($this->iPerPage < 1) {
                 $this->iPerPage = $this->iDefaultPerPage;
             }
